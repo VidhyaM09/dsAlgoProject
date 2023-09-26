@@ -4,7 +4,7 @@
   <test thread-count="3" name="TestChrome">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.dsAlgo.runner.TestRunner"></class>
+			<class name="com.dsAlgo.runner.Runner"></class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
