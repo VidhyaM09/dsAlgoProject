@@ -5,22 +5,12 @@
 	<groupId>com.dsAlgo</groupId>
 	<artifactId>dsAlgo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
-	<build>
-<plugins>
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M3</version>
-        <configuration>
-            <suiteXmlFiles>
-                <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-            </suiteXmlFiles>
-        </configuration>
-    </plugin>
-</plugins>
-	</build>
-	
+	<properties>
+		<!-- Define Java version -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -85,5 +75,21 @@
 			<version>2.24.0</version>
 		</dependency>
 	</dependencies>
-	
+	<build>
+		<plugins>
+			<!-- Configure Maven Surefire Plugin for TestNG -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version> <!-- Replace with your Surefire
+				version -->
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile> <!-- Use TestNG
+						XML configuration -->
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
