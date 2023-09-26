@@ -83,11 +83,12 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version> <!-- Replace with your Surefire
 				version -->
-				 <configuration>
-                    <!-- Specify the test runner class for Cucumber -->
-                    <testFailureIgnore>true</testFailureIgnore>
-                    <argLine>-Dcucumber.options="--plugin io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm" -Dtest=test.Runner</argLine>
-                </configuration>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile> <!-- Use TestNG
+						XML configuration -->
+					</suiteXmlFiles>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
