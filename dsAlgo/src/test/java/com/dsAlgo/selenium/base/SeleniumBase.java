@@ -31,9 +31,7 @@ public class SeleniumBase {
 	String url;
 	public static WebDriver driver;
 	String title;
-	String code;
-	String result;
-	String Excelpath = PropertyFileReader.getexcelfilepath();
+	
 
 	public WebDriver setDriver(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
@@ -109,22 +107,6 @@ public class SeleniumBase {
 	
 	public void navigateBack() {
 		driver.navigate().back();
-	}
-	
-	public String getCodefromExcel(String sheetname, int rownumber) throws InvalidFormatException, IOException  {
-		ExcelReader reader = new ExcelReader();
-		List<Map<String, String>> testdata = reader.getData(Excelpath, sheetname);
-		code = testdata.get(rownumber).get("pythonCode");
-		result = testdata.get(rownumber).get("Result");
-		return code;
-	}
-
-	public String getResultfromExcel(String sheetname, int rownumber) throws InvalidFormatException, IOException {
-		ExcelReader reader = new ExcelReader();
-		List<Map<String, String>> testdata = reader.getData(Excelpath, sheetname);
-		result = testdata.get(rownumber).get("Result");
-		LoggerLoad.info("Expected result from Excel sheetname " + sheetname + " and " + rownumber + " : " + result);
-		return result;
 	}
 	
 	

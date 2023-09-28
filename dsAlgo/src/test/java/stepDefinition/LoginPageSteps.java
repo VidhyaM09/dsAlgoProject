@@ -1,6 +1,6 @@
 package stepDefinition;
 
-import static org.testng.Assert.assertTrue;
+
 
 import java.io.IOException;
 
@@ -72,14 +72,14 @@ public class LoginPageSteps {
 	}
 
 	@When("The user enter invalid {string} and {string}")
-	public void the_user_enter_invalid_and(String string, String string2,DataTable datatable) {
+	public void the_user_enter_invalid_and(String string, String string2, DataTable datatable) {
 //		LoggerLoad.info("User Enter username as \" " + string + " \" and Password as \" " + string2 + "\" ");
 //		isEmpty = loginPage.doLogin(string, string2);
 //		assertTrue(isEmpty);
 		loginPage.enterinvalidUsername(datatable);
 		loginPage.enterinvalidpassword(datatable);
 		loginPage.clickLoginButton();
-		//loginPage.alertValidation();
+		// loginPage.alertValidation();
 		LoggerLoad.info("Empty field value is validated");
 	}
 

@@ -30,7 +30,7 @@ public class HomePageSteps {
 	public void user_clicks_on_get_started_link_without_login() {
 		homePage.getStartedLink();
 	}
-	
+
 	@Given("user clicks on register link")
 	public void user_clicks_on_register_link() {
 		homePage.clickRegisterLink();
@@ -38,17 +38,13 @@ public class HomePageSteps {
 
 	@But("user get alert message {string}")
 	public void user_get_alert_message(String string) {
-		
+
 	}
 
-	
-	
 	@Given("user clicks on dropdown {string}")
 	public void user_clicks_on_dropdown(String menu) {
-	    homePage.dropDownMenu(menu);
+		homePage.dropDownMenu(menu);
 	}
-
-
 
 	@Then("user redirected to register page")
 	public void user_redirected_to_register_page() {

@@ -18,6 +18,9 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 public class ExcelReader {
 
 	public static int totalRow;
+	String code;
+	String result;
+	String Excelpath = PropertyFileReader.getexcelfilepath();
 
 	public List<Map<String, String>> getData(String excelFilePath, String sheetName)
 			throws InvalidFormatException, IOException {
@@ -26,7 +29,7 @@ public class ExcelReader {
 		Sheet sheet = workbook.getSheet(sheetName);
 		workbook.close();
 		return readSheet(sheet);
-		
+
 	}
 
 	private List<Map<String, String>> readSheet(Sheet sheet) {
@@ -65,6 +68,22 @@ public class ExcelReader {
 	public int countRow() {
 
 		return totalRow;
+	}
+
+	public String getCodefromExcel(String sheetname, int rownumber) throws InvalidFormatException, IOException {
+		ExcelReader reader = new ExcelReader();
+		List<Map<String, String>> testdata = reader.getData(Excelpath, sheetname);
+		code = testdata.get(rownumber).get("pythonCode");
+		result = testdata.get(rownumber).get("Result");
+		return code;
+	}
+
+	public String getResultfromExcel(String sheetname, int rownumber) throws InvalidFormatException, IOException {
+		ExcelReader reader = new ExcelReader();
+		List<Map<String, String>> testdata = reader.getData(Excelpath, sheetname);
+		result = testdata.get(rownumber).get("Result");
+		LoggerLoad.info("Expected result from Excel sheetname " + sheetname + " and " + rownumber + " : " + result);
+		return result;
 	}
 
 }
