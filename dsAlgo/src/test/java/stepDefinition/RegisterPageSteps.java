@@ -1,6 +1,5 @@
 package stepDefinition;
 
-
 import com.dsAlgo.Pages.RegisterPage;
 import com.dsAlgo.utils.LoggerLoad;
 
@@ -75,9 +74,10 @@ public class RegisterPageSteps {
 	public void the_user_gets_the_warning_message_alert_below_username_textbox(String string) {
 		RegisterPage.alertValidation();
 	}
-	
+
 	@When("user enters valid {string} but incorrect {string} and {string}  and clicks on register button")
-	public void user_enters_valid_but_incorrect_and_and_clicks_on_register_button(String string, String string2, String string3,io.cucumber.datatable.DataTable dataTable) {
+	public void user_enters_valid_but_incorrect_and_and_clicks_on_register_button(String string, String string2,
+			String string3, io.cucumber.datatable.DataTable dataTable) {
 		RegisterPage.entervalidUsername(dataTable);
 		RegisterPage.entervalidPassword(dataTable);
 		RegisterPage.enterinvalidconfirmPassword(dataTable);
@@ -87,10 +87,10 @@ public class RegisterPageSteps {
 	public void the_user_gets_the_error_message_as(String string) {
 		RegisterPage.alertValidation();
 	}
-	
+
 	@When("user clicks login link")
 	public void user_clicks_login_link() {
-	   RegisterPage.loginLink();
+		RegisterPage.loginLink();
 	}
 
 	@Then("the user redirects to login page")

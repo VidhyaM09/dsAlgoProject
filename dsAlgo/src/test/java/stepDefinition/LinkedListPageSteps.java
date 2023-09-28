@@ -28,23 +28,27 @@ public class LinkedListPageSteps {
 	@And("user check all the required links available for linked list page")
 	public void user_check_all_the_required_links_available_for_linked_list_page() {
 		llp.checkLinks();
+		LoggerLoad.info("User checks all links available on Linked List Page");
 
 	}
-	
-	@Given("The user navigates back")
+
+	@And("The user navigates back")
 	public void the_user_navigates_back() {
-	    llp.back();
+		llp.back();
 	}
-
 
 	@Then("user clicks on each link")
 	public void user_clicks_on_each_link() {
 		llp.clickLinks();
+		LoggerLoad.info("User clicks all links available ");
+
 	}
 
 	@And("user validates the link navigation")
 	public void user_validates_the_link_navigation() {
 		llp.validateNavigatedLinks();
+		LoggerLoad.info("User validates link navigation");
+
 	}
 
 	@Given("user is on Introduction Page")

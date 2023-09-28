@@ -14,9 +14,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import com.dsAlgo.selenium.base.SeleniumBase;
+import com.dsAlgo.utils.ExcelReader;
 
 public class LinkedListPage extends SeleniumBase {
-
+	ExcelReader excelReader = new ExcelReader();
 	@FindBy(xpath = "//a[@href='linked-list']")
 	WebElement eleGetstartedList;
 
@@ -159,12 +160,12 @@ public class LinkedListPage extends SeleniumBase {
 	}
 
 	public void enterPythonCode(String sheetname, int rownumber) throws InvalidFormatException, IOException {
-		String code = getCodefromExcel(sheetname, rownumber);
+		String code = excelReader.getCodefromExcel(sheetname, rownumber);
 		sendKeys(eleTextBox, code);
 	}
 
 	public String getExpectedResult(String sheetName, Integer rowNum) throws InvalidFormatException, IOException {
-		String expectedResult = getResultfromExcel(sheetName, rowNum);
+		String expectedResult = excelReader.getResultfromExcel(sheetName, rowNum);
 		return expectedResult;
 	}
 
