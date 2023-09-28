@@ -1,4 +1,4 @@
-@linkedlist
+@array
 Feature: dsAlgo:009 Array feature and functionality test
 
   Before: User launch the dsAlgo application
@@ -16,3 +16,6 @@ Feature: dsAlgo:009 Array feature and functionality test
       | password     |
       | Selenium@123 |
     And click the login button
+    
+    
+    
