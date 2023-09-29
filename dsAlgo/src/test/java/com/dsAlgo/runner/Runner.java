@@ -11,7 +11,7 @@ import io.cucumber.testng.CucumberOptions;
 		monochrome = false,
 	    plugin = { "pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
 	     tags = "",
-	  //tags="@dsportal or @array",
+	     //tags="@dsportal or @array",
 		features = { "src/test/java/com/dsAlgo/features" }, // location of feature files
 		glue = {"stepDefinition","hooks"}) // location of step definition files
 
