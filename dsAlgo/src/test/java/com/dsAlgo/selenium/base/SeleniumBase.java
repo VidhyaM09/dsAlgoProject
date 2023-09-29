@@ -109,7 +109,10 @@ public class SeleniumBase {
 		driver.navigate().back();
 	}
 	
-	
+	public void waitForElement(WebElement element) {
+		new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOf(element));
+
+	}
 	
 	
 }

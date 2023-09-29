@@ -12,9 +12,9 @@ import com.dsAlgo.selenium.base.SeleniumBase;
 public class DataStructuresPage extends SeleniumBase {
 
 	@FindBy(xpath = "//a[@href ='data-structures-introduction']")
-	WebElement getStartedDSintro_link;
+	WebElement elegetStartedDSintro_link;
 	@FindBy(xpath = "//a[contains(text(),'Time Complexity')]")
-	WebElement timecomplexity_link;
+	WebElement eletimecomplexity_link;
 	@FindBy(xpath = "//a[contains(text(),'Practice Questions')]")
 	WebElement elePracticeque;
 	@FindBy(xpath = "//a[@href='/tryEditor']")
@@ -25,7 +25,7 @@ public class DataStructuresPage extends SeleniumBase {
 	}
 
 	public void getStarted_DS() {
-		click(getStartedDSintro_link);
+		click(elegetStartedDSintro_link);
 	}
 
 	public void back() {
@@ -38,7 +38,7 @@ public class DataStructuresPage extends SeleniumBase {
 	}
 
 	public void clickOnTimeComplexitylink() {
-		timecomplexity_link.click();
+		eletimecomplexity_link.click();
 
 	}
 

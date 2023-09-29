@@ -32,9 +32,9 @@ public class RegisterPageSteps {
 	}
 
 	@Then("the user is redirected to homepage with the message {string}")
-	public void the_user_is_redirected_to_homepage_with_the_message(String string) {
+	public void the_user_is_redirected_to_homepage_with_the_message(String string) throws InterruptedException {
 		RegisterPage.verifyTitleAndAlertMessage();
-
+		RegisterPage.waitforTitle();
 		RegisterPage.navigateBack();
 		RegisterPage.refresh();
 

@@ -6,14 +6,15 @@ import java.io.IOException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import org.testng.annotations.BeforeTest;
+
 import com.dsAlgo.selenium.base.SeleniumBase;
 import com.dsAlgo.utils.LoggerLoad;
 import com.dsAlgo.utils.PropertyFileReader;
 
-import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
+
 import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.Allure;
@@ -38,7 +39,7 @@ public class Hooks {
 		seleniumBase.setDriver(browserName);
 	}
 
-	@Before
+	@BeforeTest
 	public void scenario(Scenario scenario) throws Throwable {
 
 		LoggerLoad.info(

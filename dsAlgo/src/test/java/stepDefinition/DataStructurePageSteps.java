@@ -1,7 +1,5 @@
 package stepDefinition;
 
-
-
 import io.cucumber.java.en.*;
 
 import com.dsAlgo.utils.LoggerLoad;
@@ -11,14 +9,12 @@ import com.dsAlgo.Pages.*;
 public class DataStructurePageSteps {
 
 	DataStructuresPage dspage = new DataStructuresPage();
-	
 
 	// @DS_02
 	@When("The user clicks the Getting Started button in Data Structure Page introduction Panel")
 	public void the_user_clicks_the_button_in_data_structure_page_introduction_panel() {
 		dspage.getStarted_DS();
 	}
-
 
 	// @DS_03
 	@When("The user clicks Time Complexity link")
@@ -50,7 +46,7 @@ public class DataStructurePageSteps {
 		LoggerLoad.info("User is currently on Time ComplexityPage");
 		dspage.clickTryhereBtn();
 	}
-	
+
 	@And("user clicks and validates the ds link navigation")
 	public void user_validates_the_link_navigation() {
 		dspage.clickLinks();

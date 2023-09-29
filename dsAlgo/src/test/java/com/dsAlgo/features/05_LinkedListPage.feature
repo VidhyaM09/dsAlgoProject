@@ -1,13 +1,13 @@
 @linkedlist
 Feature: dsAlgo:005 Linked List feature and functionality test
-
+  
   Before: User launch the dsAlgo application
     Given open the browser maximize and set the timeouts
     And load the url
     When user click the "Get Started" button
     Then user redirects to the home page and verify the page title
-    
-  Scenario:  
+
+  Scenario: 
     Given user click on the sign in link
     Given enter the username
       | username        |
@@ -131,7 +131,7 @@ Feature: dsAlgo:005 Linked List feature and functionality test
     Examples: 
       | Sheetname  | RowNumber |
       | pythonCode |         1 |
-      
- Scenario: User on login page and trying to sign out
+
+  Scenario: User on login page and trying to sign out
     And The user navigates back
     And user clicks signout button

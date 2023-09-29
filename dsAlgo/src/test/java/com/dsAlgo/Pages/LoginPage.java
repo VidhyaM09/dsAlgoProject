@@ -144,12 +144,12 @@ public class LoginPage extends SeleniumBase {
 		List<Map<String, String>> userdetail = dataTable.asMaps(String.class, String.class);
 		for (Map<String, String> form : userdetail) {
 			String userName = form.get("username");
-			if(userName==null) {
+			if (userName == null) {
 				clickLoginButton();
 				alertValidation();
-			}else {
-			LoggerLoad.info("The user enter username as : " + userName);
-			sendKeys(eleUsername, userName);
+			} else {
+				LoggerLoad.info("The user enter username as : " + userName);
+				sendKeys(eleUsername, userName);
 			}
 		}
 	}
@@ -158,12 +158,12 @@ public class LoginPage extends SeleniumBase {
 		List<Map<String, String>> userdetail = dataTable.asMaps(String.class, String.class);
 		for (Map<String, String> form : userdetail) {
 			String pwd = form.get("password");
-			if(pwd==null) {
+			if (pwd == null) {
 				clickLoginButton();
 				alertValidation();
-			}else {
-			LoggerLoad.info("The user enter password as : " + pwd);
-			sendKeys(elePassword, pwd);
+			} else {
+				LoggerLoad.info("The user enter password as : " + pwd);
+				sendKeys(elePassword, pwd);
 			}
 		}
 
