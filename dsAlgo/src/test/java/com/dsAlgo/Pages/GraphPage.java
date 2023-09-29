@@ -43,6 +43,7 @@ public class GraphPage extends SeleniumBase {
 	public void back() {
 		navigateBack();
 	}
+
 	public void clickTryhereBtn() {
 		click(eletryhere);
 	}

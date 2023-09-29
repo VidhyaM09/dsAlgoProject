@@ -156,7 +156,7 @@ public class LinkedListPage extends SeleniumBase {
 	}
 
 	public void titleValidation() {
-		verifyTitle(" Practice Questions ");
+		verifyTitle("Practice Questions");
 	}
 
 	public void enterPythonCode(String sheetname, int rownumber) throws InvalidFormatException, IOException {

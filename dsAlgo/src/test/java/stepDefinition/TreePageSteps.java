@@ -50,7 +50,7 @@ public class TreePageSteps {
 	@When("click the run button")
 	public void click_the_run_button() {
 		treePage.clickRun();
-		LoggerLoad.info("User click run button of trees page");
+		LoggerLoad.info("User click run button");
 	}
 
 	@Then("capture and verify the result")

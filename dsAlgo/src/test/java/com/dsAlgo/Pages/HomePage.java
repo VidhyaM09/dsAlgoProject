@@ -44,10 +44,11 @@ public class HomePage extends SeleniumBase {
 	WebElement dropdown_tree;
 	@FindBy(xpath = "//*[@id='navbarCollapse']//a[6]")
 	WebElement dropdown_graph;
-	@FindBy(xpath="//a[@href='/logout']")
+	@FindBy(xpath = "//a[@href='/logout']")
 	WebElement signout;
 	@FindBy(xpath = "//*[@class='alert alert-primary']")
 	WebElement elealertMsg;
+
 	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -56,7 +57,7 @@ public class HomePage extends SeleniumBase {
 		click(eleSignIn);
 		return new LoginPage();
 	}
-	
+
 //	 public void signOut() {
 //	    	click(signout);	
 //	    }
@@ -105,11 +106,14 @@ public class HomePage extends SeleniumBase {
 		}
 		return this;
 	}
-	
+
 	public RegisterPage clickRegisterLink() {
 		click(eleRegister);
 		return new RegisterPage();
 	}
-	
+
+	public void verifyTitlePageHome() {
+		verifyTitle("NumpyNinja");
+	}
 
 }

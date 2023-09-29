@@ -1,6 +1,6 @@
 @graph
 Feature: dsAlgo:006 Graph feature and functionality test
-
+  
   Before: User launch the dsAlgo application
     Given open the browser maximize and set the timeouts
     And load the url

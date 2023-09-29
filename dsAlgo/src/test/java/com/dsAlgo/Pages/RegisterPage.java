@@ -3,6 +3,7 @@ package com.dsAlgo.Pages;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -28,8 +29,6 @@ public class RegisterPage extends SeleniumBase {
 	WebElement elealertMsg;
 	@FindBy(xpath = "//a[@href='/login']")
 	WebElement elelogin;
-	
-	
 
 	String prefix = "user";
 	String suffix = Integer.toString(new Random().nextInt(1000)); // Generates a random number between 0 and 999
@@ -93,48 +92,51 @@ public class RegisterPage extends SeleniumBase {
 
 	public void entervalidUsername(DataTable dataTable) {
 		List<Map<String, String>> userdetail = dataTable.asMaps(String.class, String.class);
-	    for (Map<String, String> form : userdetail) {
-	        String userName = form.get("username");
-	        LoggerLoad.info("The user enter username as : " + userName);
-	        sendKeys(eleusername, userName);
-	    }
+		for (Map<String, String> form : userdetail) {
+			String userName = form.get("username");
+			LoggerLoad.info("The user enter username as : " + userName);
+			sendKeys(eleusername, userName);
+		}
 
 	}
-	
+
 	public void entervalidPassword(DataTable dataTable) {
 		List<Map<String, String>> userdetail = dataTable.asMaps(String.class, String.class);
-	    for (Map<String, String> form : userdetail) {
-	        String pwd = form.get("password");
-	        LoggerLoad.info("The user enter password as : " + pwd);
-	        sendKeys(elepassword, pwd);
-	    }
+		for (Map<String, String> form : userdetail) {
+			String pwd = form.get("password");
+			LoggerLoad.info("The user enter password as : " + pwd);
+			sendKeys(elepassword, pwd);
+		}
 	}
-	
+
 	public void enterinvalidconfirmPassword(DataTable dataTable) {
 		List<Map<String, String>> userdetail = dataTable.asMaps(String.class, String.class);
-	    for (Map<String, String> form : userdetail) {
-	        String confirmpwd = form.get("confirm password");
-	        LoggerLoad.info("The user enter password as : " + confirmpwd);
-	        sendKeys(eleconfirmpassword, confirmpwd);
-	    }
+		for (Map<String, String> form : userdetail) {
+			String confirmpwd = form.get("confirm password");
+			LoggerLoad.info("The user enter password as : " + confirmpwd);
+			sendKeys(eleconfirmpassword, confirmpwd);
+		}
 	}
-	    
-	  
-	
+
+	public void waitforTitle() {
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10));
+	}
+
 	public void alertValidation() {
 		WebElement activeElement = driver.switchTo().activeElement();
 		String messageStr = activeElement.getAttribute("validationMessage");
 		System.out.println("Actual message appeared on screen: " + messageStr);
 	}
-	
+
 	public LoginPage loginLink() {
+		waitForElement(elelogin);
 		click(elelogin);
-		verifyTitle("NumpyNinja");
+		verifyTitle("Login");
 		return new LoginPage();
 	}
-  
+
 	public void validateRegistrationTitle() {
 		verifyTitle("Registration");
 	}
-	
+
 }
