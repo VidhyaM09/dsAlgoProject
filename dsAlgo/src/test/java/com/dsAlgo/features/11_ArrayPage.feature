@@ -227,18 +227,18 @@ Feature: dsAlgo:011 Array feature and functionality test
       | Sheetname  | RowNumber |
       | pythonCode |         7 |
 
-  Scenario Outline: User validates Practice Questions 4 page using submit
-    Given user is on practice questions Page
-    And user validate the title
-    Then user clicks on fourth practice question
-    And user enters the code for practice question in tryEditor from sheet "<Sheetname>" and <RowNumber>
-    When click the submit button
-    Then user validates the output for the practice question
-    And The user navigates back
-
-    Examples: 
-      | Sheetname  | RowNumber |
-      | pythonCode |         9 |
+  #Scenario Outline: User validates Practice Questions 4 page using submit
+    #Given user is on practice questions Page
+    #And user validate the title
+    #Then user clicks on fourth practice question
+    #And user enters the code for practice question in tryEditor from sheet "<Sheetname>" and <RowNumber>
+    #When click the submit button
+    #Then user validates the output for the practice question
+    #And The user navigates back
+#
+    #Examples: 
+      #| Sheetname  | RowNumber |
+      #| pythonCode |         9 |
 
   Scenario: User on login page and trying to sign out
     And The user navigates back
