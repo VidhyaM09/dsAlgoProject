@@ -16,6 +16,8 @@ import com.dsAlgo.selenium.base.SeleniumBase;
 import com.dsAlgo.utils.ExcelReader;
 
 public class ArrayPage extends SeleniumBase {
+	
+	
 	ExcelReader excelReader = new ExcelReader();
 	@FindBy(xpath = "//a[@href='array']")
 	WebElement elegetstart_array;
@@ -128,7 +130,7 @@ public class ArrayPage extends SeleniumBase {
 	public void enterCodePractice(String code, WebElement element) throws InterruptedException {
 		// new
 		// Actions(driver).keyDown(Keys.COMMAND).sendKeys("a").sendKeys(Keys.DELETE).keyUp(Keys.COMMAND).perform();
-		new Actions(driver).keyDown(Keys.CONTROL).sendKeys("a").sendKeys(Keys.DELETE).keyUp(Keys.CONTROL).perform();
+		new Actions(driver).keyDown(Keys.COMMAND).sendKeys("a").sendKeys(Keys.DELETE).keyUp(Keys.COMMAND).perform();
 		String[] str1 = code.split("\n");
 		for (int i = 0; i < str1.length; i++) {
 			if (str1[i].equalsIgnoreCase("\\b")) {
